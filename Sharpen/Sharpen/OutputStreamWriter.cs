@@ -4,7 +4,7 @@ namespace Sharpen
 	using System.IO;
 	using System.Text;
 
-	internal class OutputStreamWriter : StreamWriter
+	public class OutputStreamWriter : StreamWriter
 	{
 		public OutputStreamWriter (OutputStream stream) : base(stream.GetWrappedStream ())
 		{

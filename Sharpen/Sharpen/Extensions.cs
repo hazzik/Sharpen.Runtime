@@ -18,7 +18,7 @@ namespace Sharpen
 	using System.Text;
 	using System.Text.RegularExpressions;
 
-	internal static class Extensions
+	public static class Extensions
 	{
 		private static readonly long EPOCH_TICKS;
 

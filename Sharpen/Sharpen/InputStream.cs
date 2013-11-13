@@ -39,7 +39,7 @@ namespace Sharpen
 			Close ();
 		}
 
-		internal Stream GetWrappedStream ()
+		public Stream GetWrappedStream ()
 		{
 			// Always create a wrapper stream (not directly Wrapped) since the subclass
 			// may be overriding methods that need to be called when used through the Stream class
@@ -124,7 +124,7 @@ namespace Sharpen
 			return cnt - n;
 		}
 		
-		internal bool CanSeek ()
+		public bool CanSeek ()
 		{
 			if (Wrapped != null)
 				return Wrapped.CanSeek;
@@ -132,7 +132,7 @@ namespace Sharpen
 				return false;
 		}
 		
-		internal long Position {
+		public long Position {
 			get {
 				if (Wrapped != null)
 					return Wrapped.Position;
@@ -147,7 +147,7 @@ namespace Sharpen
 			}
 		}
 
-		static internal InputStream Wrap (Stream s)
+		static public InputStream Wrap (Stream s)
 		{
 			InputStream stream = new InputStream ();
 			stream.Wrapped = s;

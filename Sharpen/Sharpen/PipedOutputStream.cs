@@ -2,7 +2,7 @@ namespace Sharpen
 {
 	using System;
 
-	internal class PipedOutputStream : OutputStream
+	public class PipedOutputStream : OutputStream
 	{
 		PipedInputStream ips;
 
@@ -21,7 +21,7 @@ namespace Sharpen
 			base.Close ();
 		}
 
-		internal void Attach (PipedInputStream iss)
+		public void Attach (PipedInputStream iss)
 		{
 			ips = iss;
 		}

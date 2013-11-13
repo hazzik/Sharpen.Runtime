@@ -7,7 +7,7 @@
 //
 // Compilation Options:
 //     MONO_DATACONVERTER_PUBLIC:
-//         Makes the class public instead of the default internal.
+//         Makes the class public instead of the default public.
 //
 //     MONO_DATACONVERTER_STATIC_METHODS:     
 //         Exposes the public static methods.
@@ -47,7 +47,7 @@ namespace Sharpen {
 #if MONO_DATACONVERTER_PUBLIC
 	unsafe public abstract class DataConverter {
 #else
-	unsafe internal abstract class DataConverter {
+	unsafe public abstract class DataConverter {
 
 // Disables the warning: CLS compliance checking will not be performed on
 //  `XXXX' because it is not visible from outside this assembly
@@ -749,7 +749,7 @@ namespace Sharpen {
 			return result;
 		}
 
-		internal void Check (byte [] dest, int destIdx, int size)
+		public void Check (byte [] dest, int destIdx, int size)
 		{
 			if (dest == null)
 				throw new ArgumentNullException ("dest");

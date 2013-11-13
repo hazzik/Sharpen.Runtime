@@ -3,7 +3,7 @@ namespace Sharpen
 	using System;
 	using System.IO;
 
-	internal class RandomAccessFile
+	public class RandomAccessFile
 	{
 		private FileStream stream;
 

@@ -3,7 +3,7 @@ namespace Sharpen
 	using System;
 	using System.IO;
 
-	internal class WrappedSystemStream : Stream
+	public class WrappedSystemStream : Stream
 	{
 		private InputStream ist;
 		private OutputStream ost;
@@ -107,7 +107,7 @@ namespace Sharpen
 			}
 		}
 		
-		internal void OnMark (int nb)
+		public void OnMark (int nb)
 		{
 			markedPosition = position;
 			ist.Mark (nb);

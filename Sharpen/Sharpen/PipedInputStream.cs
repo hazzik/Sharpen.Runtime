@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Sharpen
 {
-	internal class PipedInputStream : InputStream
+	public class PipedInputStream : InputStream
 	{
 		private byte[] oneBuffer;
 		public const int PIPE_SIZE = 1024;
@@ -141,7 +141,7 @@ namespace Sharpen
 			return len;
 		}
 		
-		internal void Write (int b)
+		public void Write (int b)
 		{
 			lock (thisLock) {
 				Allocate (1);
@@ -151,7 +151,7 @@ namespace Sharpen
 			}
 		}
 		
-		internal void Write (byte[] b, int offset, int len)
+		public void Write (byte[] b, int offset, int len)
 		{
 			do {
 				lock (thisLock) {

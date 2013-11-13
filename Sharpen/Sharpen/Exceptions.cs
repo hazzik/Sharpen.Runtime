@@ -43,7 +43,7 @@ namespace Sharpen
 	{
 	}
 
-	internal class BufferUnderflowException : Exception
+	public class BufferUnderflowException : Exception
 	{
 	}
 
@@ -115,11 +115,11 @@ namespace Sharpen
 	{
 	}
 
-	internal class NoSuchMethodException : Exception
+	public class NoSuchMethodException : Exception
 	{
 	}
 
-	internal class OverlappingFileLockException : Exception
+	public class OverlappingFileLockException : Exception
 	{
 	}
 
@@ -153,11 +153,11 @@ namespace Sharpen
 		}
 	}
 
-	internal class StringIndexOutOfBoundsException : Exception
+	public class StringIndexOutOfBoundsException : Exception
 	{
 	}
 
-	internal class UnknownHostException : Exception
+	public class UnknownHostException : Exception
 	{
 		public UnknownHostException ()
 		{
@@ -168,18 +168,18 @@ namespace Sharpen
 		}
 	}
 
-	internal class UnsupportedEncodingException : Exception
+	public class UnsupportedEncodingException : Exception
 	{
 	}
 
-	internal class URISyntaxException : Exception
+	public class URISyntaxException : Exception
 	{
 		public URISyntaxException (string s, string msg) : base(s + " " + msg)
 		{
 		}
 	}
 
-	internal class ZipException : Exception
+	public class ZipException : Exception
 	{
 	}
 

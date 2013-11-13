@@ -3,7 +3,7 @@ namespace Sharpen
 	using System;
 	using System.Collections.Generic;
 
-	internal class EnumeratorWrapper<T> : Iterator<T>
+	public class EnumeratorWrapper<T> : Iterator<T>
 	{
 		object collection;
 		IEnumerator<T> e;

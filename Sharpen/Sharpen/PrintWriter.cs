@@ -4,7 +4,7 @@ namespace Sharpen
 	using System.IO;
 	using System.Text;
 
-	internal class PrintWriter : TextWriter
+	public class PrintWriter : TextWriter
 	{
 		TextWriter writer;
 		

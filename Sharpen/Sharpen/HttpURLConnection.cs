@@ -34,11 +34,11 @@ namespace Sharpen
 	
 	public class HttpsURLConnection: HttpURLConnection
 	{
-		internal HttpsURLConnection (Uri uri, Proxy p): base (uri, p)
+		public HttpsURLConnection (Uri uri, Proxy p): base (uri, p)
 		{
 		}
 		
-		internal void SetSSLSocketFactory (object factory)
+		public void SetSSLSocketFactory (object factory)
 		{
 			// TODO
 		}
@@ -55,7 +55,7 @@ namespace Sharpen
 		HttpWebResponse reqResponse;
 		Uri url;
 		
-		internal HttpURLConnection (Uri uri, Proxy p)
+		public HttpURLConnection (Uri uri, Proxy p)
 		{
 			url = uri;
 			request = (HttpWebRequest) HttpWebRequest.Create (uri);

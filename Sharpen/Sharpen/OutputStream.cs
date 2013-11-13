@@ -36,14 +36,14 @@ namespace Sharpen
 			}
 		}
 
-		internal Stream GetWrappedStream ()
+		public Stream GetWrappedStream ()
 		{
 			// Always create a wrapper stream (not directly Wrapped) since the subclass
 			// may be overriding methods that need to be called when used through the Stream class
 			return new WrappedSystemStream (this);
 		}
 
-		static internal OutputStream Wrap (Stream s)
+		static public OutputStream Wrap (Stream s)
 		{
 			OutputStream stream = new OutputStream ();
 			stream.Wrapped = s;

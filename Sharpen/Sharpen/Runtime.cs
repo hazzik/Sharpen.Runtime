@@ -16,24 +16,24 @@ namespace Sharpen
 		private static Runtime instance;
 		private List<ShutdownHook> shutdownHooks = new List<ShutdownHook> ();
 
-		internal void AddShutdownHook (Runnable r)
+		public void AddShutdownHook (Runnable r)
 		{
 			ShutdownHook item = new ShutdownHook ();
 			item.Runnable = r;
 			this.shutdownHooks.Add (item);
 		}
 
-		internal int AvailableProcessors ()
+		public int AvailableProcessors ()
 		{
 			return Environment.ProcessorCount;
 		}
 
-		internal static long CurrentTimeMillis ()
+		public static long CurrentTimeMillis ()
 		{
 			return DateTime.UtcNow.ToMillisecondsSinceEpoch ();
 		}
 
-		internal SystemProcess Exec (string[] cmd, string[] envp, FilePath dir)
+		public SystemProcess Exec (string[] cmd, string[] envp, FilePath dir)
 		{
 			try {
 				ProcessStartInfo psi = new ProcessStartInfo ();
@@ -59,12 +59,12 @@ namespace Sharpen
 			}
 		}
 
-		internal static string Getenv (string var)
+		public static string Getenv (string var)
 		{
 			return Environment.GetEnvironmentVariable (var);
 		}
 
-		internal static IDictionary<string, string> GetEnv ()
+		public static IDictionary<string, string> GetEnv ()
 		{
 			Dictionary<string, string> dictionary = new Dictionary<string, string> ();
 			foreach (DictionaryEntry v in Environment.GetEnvironmentVariables ()) {
@@ -73,7 +73,7 @@ namespace Sharpen
 			return dictionary;
 		}
 
-		internal static IPAddress GetLocalHost ()
+		public static IPAddress GetLocalHost ()
 		{
 			try {
 				return Dns.GetHostEntry (Dns.GetHostName ()).AddressList[0];
@@ -120,12 +120,12 @@ namespace Sharpen
 			return instance;
 		}
 
-		internal static int IdentityHashCode (object ob)
+		public static int IdentityHashCode (object ob)
 		{
 			return RuntimeHelpers.GetHashCode (ob);
 		}
 
-		internal long MaxMemory ()
+		public long MaxMemory ()
 		{
 			return int.MaxValue;
 		}
@@ -140,62 +140,62 @@ namespace Sharpen
 			}
 		}
 		
-		internal static void DeleteCharAt (StringBuilder sb, int index)
+		public static void DeleteCharAt (StringBuilder sb, int index)
 		{
 			sb.Remove (index, 1);
 		}
 		
-		internal static byte[] GetBytesForString (string str)
+		public static byte[] GetBytesForString (string str)
 		{
 			return Encoding.UTF8.GetBytes (str);
 		}
 
-		internal static byte[] GetBytesForString (string str, string encoding)
+		public static byte[] GetBytesForString (string str, string encoding)
 		{
 			return Encoding.GetEncoding (encoding).GetBytes (str);
 		}
 
-		internal static FieldInfo[] GetDeclaredFields (Type t)
+		public static FieldInfo[] GetDeclaredFields (Type t)
 		{
 			return t.GetFields (BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
 		}
 
-		internal static void NotifyAll (object ob)
+		public static void NotifyAll (object ob)
 		{
 			Monitor.PulseAll (ob);
 		}
 
-		internal static void PrintStackTrace (Exception ex)
+		public static void PrintStackTrace (Exception ex)
 		{
 			Console.WriteLine (ex);
 		}
 
-		internal static void PrintStackTrace (Exception ex, TextWriter tw)
+		public static void PrintStackTrace (Exception ex, TextWriter tw)
 		{
 			tw.WriteLine (ex);
 		}
 
-		internal static string Substring (string str, int index)
+		public static string Substring (string str, int index)
 		{
 			return str.Substring (index);
 		}
 
-		internal static string Substring (string str, int index, int endIndex)
+		public static string Substring (string str, int index, int endIndex)
 		{
 			return str.Substring (index, endIndex - index);
 		}
 
-		internal static void Wait (object ob)
+		public static void Wait (object ob)
 		{
 			Monitor.Wait (ob);
 		}
 
-		internal static bool Wait (object ob, long milis)
+		public static bool Wait (object ob, long milis)
 		{
 			return Monitor.Wait (ob, (int)milis);
 		}
 		
-		internal static Type GetType (string name)
+		public static Type GetType (string name)
 		{
 			foreach (Assembly a in AppDomain.CurrentDomain.GetAssemblies ()) {
 				Type t = a.GetType (name);
@@ -205,47 +205,47 @@ namespace Sharpen
 			throw new InvalidOperationException ("Type not found: " + name);
 		}
 		
-		internal static void SetCharAt (StringBuilder sb, int index, char c)
+		public static void SetCharAt (StringBuilder sb, int index, char c)
 		{
 			sb [index] = c;
 		}
 		
-		internal static bool EqualsIgnoreCase (string s1, string s2)
+		public static bool EqualsIgnoreCase (string s1, string s2)
 		{
 			return s1.Equals (s2, StringComparison.CurrentCultureIgnoreCase);
 		}
 		
-		internal static long NanoTime ()
+		public static long NanoTime ()
 		{
 			return Environment.TickCount * 1000 * 1000;
 		}
 		
-		internal static int CompareOrdinal (string s1, string s2)
+		public static int CompareOrdinal (string s1, string s2)
 		{
 			return string.CompareOrdinal (s1, s2);
 		}
 
-		internal static string GetStringForBytes (byte[] chars)
+		public static string GetStringForBytes (byte[] chars)
 		{
 			return Encoding.UTF8.GetString (chars);
 		}
 
-		internal static string GetStringForBytes (byte[] chars, string encoding)
+		public static string GetStringForBytes (byte[] chars, string encoding)
 		{
 			return GetEncoding (encoding).GetString (chars);
 		}
 
-		internal static string GetStringForBytes (byte[] chars, int start, int len)
+		public static string GetStringForBytes (byte[] chars, int start, int len)
 		{
 			return Encoding.UTF8.GetString (chars, start, len);
 		}
 
-		internal static string GetStringForBytes (byte[] chars, int start, int len, string encoding)
+		public static string GetStringForBytes (byte[] chars, int start, int len, string encoding)
 		{
 			return GetEncoding (encoding).Decode (chars, start, len);
 		}
 		
-		internal static Encoding GetEncoding (string name)
+		public static Encoding GetEncoding (string name)
 		{
 //			Encoding e = Encoding.GetEncoding (name, EncoderFallback.ExceptionFallback, DecoderFallback.ExceptionFallback);
 			Encoding e = Encoding.GetEncoding (name.Replace ('_','-'));

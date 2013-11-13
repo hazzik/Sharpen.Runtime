@@ -6,11 +6,16 @@ namespace Sharpen
 
 	public class TreeSet<T> : AbstractSet<T>
 	{
-		private SortedDictionary<T, int> dict;
+		private readonly SortedDictionary<T, int> dict;
 
 		public TreeSet ()
 		{
 			this.dict = new SortedDictionary<T, int> ();
+		}
+
+		public TreeSet (IComparer<T> comparer)
+		{
+			this.dict = new SortedDictionary<T, int>(comparer);
 		}
 
 		public TreeSet (IEnumerable<T> items)
@@ -36,7 +41,7 @@ namespace Sharpen
 
 		private int Compare (T a, T b)
 		{
-			return Comparer<T>.Default.Compare (a, b);
+			return dict.Comparer.Compare(a, b);
 		}
 
 		public override bool Contains (object item)

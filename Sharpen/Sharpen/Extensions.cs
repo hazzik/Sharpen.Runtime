@@ -703,6 +703,11 @@ namespace Sharpen
 			return new HttpsURLConnection (uri, p);
 		}
 		
+		public static HttpURLConnection OpenConnection (this Uri uri)
+		{
+			return new HttpsURLConnection(uri);
+		}
+
 		public static Uri ToURI (this Uri uri)
 		{
 			return uri;

@@ -226,6 +226,27 @@ namespace Sharpen
 			}
 		}
 
+		public FilePath[] ListFiles(FileFilter filter)
+		{
+			try
+			{
+				if (IsFile())
+					return null;
+				List<FilePath> list = new List<FilePath>();
+				foreach (string filePath in Directory.GetFileSystemEntries(path))
+				{
+					var item = new FilePath(filePath);
+					if (filter.Accept(item))
+						list.Add(item);
+				}
+				return list.ToArray();
+			}
+			catch
+			{
+				return null;
+			}
+		}
+
 		static void MakeDirWritable (string dir)
 		{
 			FileHelper.Instance.MakeDirWritable (dir);

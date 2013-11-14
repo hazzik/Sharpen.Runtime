@@ -75,6 +75,7 @@
     <Compile Include="Sharpen\ExecutorService.cs" />
     <Compile Include="Sharpen\Extensions.cs" />
     <Compile Include="Sharpen\FileChannel.cs" />
+    <Compile Include="Sharpen\FileFilter.cs" />
     <Compile Include="Sharpen\FileInputStream.cs" />
     <Compile Include="Sharpen\FileLock.cs" />
     <Compile Include="Sharpen\FileOutputStream.cs" />

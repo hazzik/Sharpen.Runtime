@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 
 using System;
+using System.Runtime.Serialization;
 
 namespace Sharpen
 {
@@ -153,9 +154,29 @@ namespace Sharpen
 		}
 	}
 
-	public class StringIndexOutOfBoundsException : Exception
-	{
-	}
+    [Serializable]
+    public class StringIndexOutOfBoundsException : Exception
+    {
+        public StringIndexOutOfBoundsException()
+        {
+        }
+
+        public StringIndexOutOfBoundsException(int index)
+        {
+        }
+
+        public StringIndexOutOfBoundsException(string message) : base(message)
+        {
+        }
+
+        public StringIndexOutOfBoundsException(string message, Exception inner) : base(message, inner)
+        {
+        }
+
+        protected StringIndexOutOfBoundsException(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
+    }
 
 	public class UnknownHostException : Exception
 	{

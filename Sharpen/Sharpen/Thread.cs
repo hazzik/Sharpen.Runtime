@@ -31,6 +31,10 @@ namespace Sharpen
 		{
 		}
 		
+		public Thread (Runnable runnable, string name): this (runnable, null, name)
+		{
+		}
+		
 		Thread (Runnable runnable, ThreadGroup grp, string name)
 		{
 			thread = new System.Threading.Thread (new ThreadStart (InternalRun));
@@ -147,7 +151,11 @@ namespace Sharpen
 		{
 			thread.Abort ();
 		}
-		
+
+	    public void Stop()
+	    {
+	        throw new NotImplementedException();
+	    }
 	}
 
 	public class ThreadGroup

@@ -17,5 +17,15 @@ namespace Sharpen
 			buffer.Wrapped = str;
 			return buffer;
 		}
+
+		public override int Length
+		{
+			get { return Wrapped.Length; }
+		}
+
+		public override char this[int i]
+		{
+			get { return Wrapped[i]; }
+		}
 	}
 }

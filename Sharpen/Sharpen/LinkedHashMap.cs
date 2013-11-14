@@ -1,11 +1,9 @@
 namespace Sharpen
 {
-	using System;
-	using System.Collections.Generic;
+    using System.Collections.Generic;
 	using System.Linq;
-	using System.Runtime.CompilerServices;
 
-	public class LinkedHashMap<T, U> : AbstractMap<T, U>
+    public class LinkedHashMap<T, U> : AbstractMap<T, U>
 	{
 		private List<KeyValuePair<T, U>> list;
 		private Dictionary<T, U> table;
@@ -14,6 +12,12 @@ namespace Sharpen
 		{
 			this.table = new Dictionary<T, U> ();
 			this.list = new List<KeyValuePair<T, U>> ();
+		}
+
+        public LinkedHashMap (int capacity)
+		{
+            this.table = new Dictionary<T, U>(capacity);
+            this.list = new List<KeyValuePair<T, U>>(capacity);
 		}
 
 		public override void Clear ()

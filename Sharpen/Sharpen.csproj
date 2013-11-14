@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -66,6 +66,7 @@
     <Compile Include="Sharpen\DeflaterOutputStream.cs" />
     <Compile Include="Sharpen\EnumerableWrapper.cs" />
     <Compile Include="Sharpen\EnumeratorWrapper.cs" />
+    <Compile Include="Sharpen\EventObject.cs" />
     <Compile Include="Sharpen\Executors.cs" />
     <Compile Include="Sharpen\ExecutorService.cs" />
     <Compile Include="Sharpen\Extensions.cs" />
@@ -95,6 +96,8 @@
     <Compile Include="Sharpen\PipedOutputStream.cs" />
     <Compile Include="Sharpen\PrintWriter.cs" />
     <Compile Include="Sharpen\PrivilegedAction.cs" />
+    <Compile Include="Sharpen\PropertyChangeEvent.cs" />
+    <Compile Include="Sharpen\PropertyChangeListener.cs" />
     <Compile Include="Sharpen\RandomAccessFile.cs" />
     <Compile Include="Sharpen\ReentrantLock.cs" />
     <Compile Include="Sharpen\Reference.cs" />
@@ -157,7 +160,5 @@
     <Compile Include="Sharpen\JavaCalendar.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="Sharpen\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

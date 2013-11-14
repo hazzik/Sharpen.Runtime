@@ -134,5 +134,15 @@ namespace Sharpen
 		{
 			return dict;
 		}
+
+		public static bool Disjoint<T>(ICollection<T> c1, ICollection<T> c2)
+		{
+			foreach (var i in c1)
+			{
+				if (c2.Contains(i))
+					return false;
+			}
+			return true;
+		}
 	}
 }

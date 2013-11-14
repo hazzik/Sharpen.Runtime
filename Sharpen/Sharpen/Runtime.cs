@@ -253,5 +253,10 @@ namespace Sharpen
 				return new UTF8Encoding (false, true);
 			return e;
 		}
+
+	    public static MethodInfo GetDeclaredMethod(Type type, string method, Type[] paramTypes)
+	    {
+            return type.GetMethod(method, BindingFlags.DeclaredOnly);
+	    }
 	}
 }

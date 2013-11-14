@@ -814,5 +814,11 @@ namespace Sharpen
 			si.CreateNoWindow = true;
 			return SystemProcess.Start (si);
 		}
+
+	    public static Uri Resolve(this Uri uri, string str)
+	    {
+            //TODO: Check implementation
+	        return new Uri(uri, str);
+	    }
 	}
 }

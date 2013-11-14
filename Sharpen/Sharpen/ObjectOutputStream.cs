@@ -5,16 +5,31 @@ namespace Sharpen
 
 	public class ObjectOutputStream : OutputStream
 	{
-		private BinaryWriter bw;
+		private readonly BinaryWriter bw;
 
 		public ObjectOutputStream (OutputStream os)
 		{
-			this.bw = new BinaryWriter (os.GetWrappedStream ());
+			bw = new BinaryWriter (os.GetWrappedStream ());
 		}
 
 		public virtual void WriteInt (int i)
 		{
-			this.bw.Write (i);
+			bw.Write (i);
 		}
+
+        public virtual void WriteBoolean(bool value)
+	    {
+	        bw.Write(value);
+	    }
+
+	    public void WriteObject(object value)
+	    {
+	        throw new NotImplementedException();
+	    }
+
+	    public void WriteByte(int value)
+	    {
+	        bw.Write((byte) value);
+	    }
 	}
 }

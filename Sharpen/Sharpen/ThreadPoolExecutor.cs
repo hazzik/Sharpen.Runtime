@@ -4,7 +4,7 @@ using ST = System.Threading;
 
 namespace Sharpen
 {
-	class ThreadPoolExecutor
+    public class ThreadPoolExecutor
 	{
 		ThreadFactory tf;
 		int corePoolSize;

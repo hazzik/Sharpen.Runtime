@@ -28,8 +28,11 @@ using System.Net;
 
 namespace Sharpen
 {
-	public class URLConnection
+	public abstract class URLConnection
 	{
+		public abstract InputStream GetInputStream();
+		public abstract string GetContentType ();
+		public abstract int GetContentLength ();
 	}
 	
 	public class HttpsURLConnection: HttpURLConnection
@@ -164,7 +167,7 @@ namespace Sharpen
 			// Not available
 		}
 		
-		public InputStream GetInputStream ()
+		public override InputStream GetInputStream ()
 		{
 			return Response.GetResponseStream ();
 		}
@@ -179,12 +182,12 @@ namespace Sharpen
 			return Response.GetResponseHeader (header);
 		}
 		
-		public string GetContentType ()
+		public override string GetContentType ()
 		{
 			return Response.ContentType;
 		}
 		
-		public int GetContentLength ()
+		public override int GetContentLength ()
 		{
 			return (int) Response.ContentLength;
 		}

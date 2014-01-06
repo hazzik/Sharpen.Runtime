@@ -59,13 +59,13 @@ namespace Sharpen
 				while ((str = reader.ReadLine ()) != null) {
 					int index = str.IndexOf ('=');
 					if (index != -1) {
-						string value = str.Substring (index + 1).Replace (@"\n", "\n").Trim ();
+						string value = str.Substring(index + 1).Trim();
 						while (value.EndsWith("\\")) {
-							value = value.Substring(0, value.Length - 1);
+							value = value.Substring(0, value.Length - 1).Replace(@"\n", Environment.NewLine).TrimStart('\\');
 							string readLine = reader.ReadLine();
-							if (readLine != null) value = value + readLine.Trim();
+							if (readLine != null) value = value + readLine.Trim().Replace(@"\n", Environment.NewLine).TrimStart('\\');
 						}
-						this.strings[str.Substring (0, index).Trim ()] = value;
+						this.strings[str.Substring(0, index).Trim()] = value;
 					}
 				}
 			}

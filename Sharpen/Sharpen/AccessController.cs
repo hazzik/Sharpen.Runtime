@@ -8,5 +8,9 @@ namespace Sharpen
 		{
 			return action.Run ();
 		}
+		public static T DoPrivileged<T> (PrivilegedExceptionAction<T> action)
+		{
+			return action.Run ();
+		}
 	}
 }

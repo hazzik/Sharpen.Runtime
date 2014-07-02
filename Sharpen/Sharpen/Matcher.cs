@@ -5,9 +5,9 @@ namespace Sharpen
 
 	public class Matcher
 	{
-		private int current;
+	    public int current;
 		private MatchCollection matches;
-		private Regex regex;
+	    public Regex regex;
 		private string str;
 
 		public Matcher (Regex regex, string str)

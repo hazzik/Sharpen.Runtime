@@ -19,7 +19,7 @@ namespace Sharpen
 
 		public object ReadObject ()
 		{
-			throw new NotImplementedException ();
+			return null;
 		}
 
 	    protected virtual object ResolveObject(object obj)
@@ -27,7 +27,7 @@ namespace Sharpen
 	        throw new NotImplementedException();
 	    }
 
-	    protected Type ResolveClass(ObjectStreamClass desc)
+	    protected virtual Type ResolveClass(ObjectStreamClass desc)
 	    {
 	        throw new NotImplementedException();
 	    }
@@ -45,6 +45,16 @@ namespace Sharpen
 	    public int ReadShort()
 	    {
 	        return reader.ReadInt16();
+	    }
+
+	    public void DefaultReadObject()
+	    {
+	        throw new NotImplementedException();
+	    }
+
+	    protected void EnableResolveObject(bool b)
+	    {
+	        throw new NotImplementedException();
 	    }
 	}
 

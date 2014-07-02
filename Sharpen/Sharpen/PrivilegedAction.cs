@@ -4,4 +4,9 @@ namespace Sharpen
 	{
 		T Run ();
 	}
+
+	public interface PrivilegedExceptionAction<T>
+	{
+		T Run();
+	}
 }

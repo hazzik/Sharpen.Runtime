@@ -24,12 +24,26 @@ namespace Sharpen
 
 	    public void WriteObject(object value)
 	    {
-	        throw new NotImplementedException();
 	    }
 
 	    public void WriteByte(int value)
 	    {
 	        bw.Write((byte) value);
+	    }
+
+	    public void DefaultWriteObject()
+	    {
+	        throw new NotImplementedException();
+	    }
+
+	    public void WriteShort(int value)
+	    {
+	        bw.Write((short) value);
+	    }
+
+	    protected void EnableReplaceObject(bool b)
+	    {
+	        throw new NotImplementedException();
 	    }
 	}
 }
